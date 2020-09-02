@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+    <head>
+
+
+    <meta charset="UTF_8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>name table</title>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="nametable.css">
+ 
+    
+
+    <script>
+
+        var selectedPerson;
+        
+     function getName(b1)
+     {   var fName=document.getElementById("txt1").value;
+         var lName=document.getElementById("txt2").value;
+
+         
+
+         if(b1.value=="submit")
+         {
+          
+         var person=document.createElement("tr");
+         person.style.fontSize="20px";
+        
+         var fCell=document.createElement("td");
+         var fNode=document.createTextNode(fName);
+         fCell.appendChild(fNode);
+         person.appendChild(fCell);
+        
+
+         var lCell=document.createElement("td");  
+         var lNode=document.createTextNode(lName);
+         lCell.appendChild(lNode);
+         person.appendChild(lCell);
+
+       
+
+         var delLink=document.createElement("a");
+         delLink.href="#";
+         delLink.innerHTML="delete";  
+         delLink.onclick=function(){delPerson(person)};
+         
+         var sep=document.createTextNode("|");
+
+         var editLink=document.createElement("a");
+         editLink.href="#";
+         editLink.innerHTML="edite";
+         editLink.onclick=function(){editPerson(person)}
+
+         var opCell=document.createElement("td");
+         
+         opCell.appendChild(delLink);
+         opCell.appendChild(sep);
+         opCell.appendChild(editLink);
+
+         person.appendChild(opCell);
+
+         
+         document.getElementById("t1").appendChild(person); 
+
+         }
+
+
+            else
+			{
+				selectedPerson.childNodes[0].innerHTML=fName;
+                selectedPerson.childNodes[1].innerHTML=lName;
+                document.getElementById("b1").value="submit";
+                selectedPerson.style.backgroundColor="#2ADA2B";
+			}
+    
+
+     }
+
+         function delPerson(person)
+         {
+             document.getElementById("t1").removeChild(person);
+         } 
+
+
+         function editPerson(person)
+         {   
+            selectedPerson = person
+			person.style.backgroundColor = "#9BF39B";
+			document.getElementById('txt1').value = person.childNodes[0].innerHTML;
+			document.getElementById('txt2').value = person.childNodes[1].innerHTML;
+			document.getElementById('b1').value = "modify";
+            
+            
+          
+         }
+
+         function colorChange()
+         {
+             document.getElementById("txt1").style.backgroundColor="#66E166";
+         }
+         function colorWhite()
+         {
+             document.getElementById("txt1").style.backgroundColor="white";
+         }
+
+
+         function colorChange1()
+         {
+             document.getElementById("txt2").style.backgroundColor="#66E166";
+         }
+         function colorWhite1()
+         {
+             document.getElementById("txt2").style.backgroundColor="white";
+         }
+
+     
+    </script>
+
+    <style>
+ 
+
+    </style>
+    </head>
+
+
+    <body>
+     <!--<style>
+         body{background-color:#2ADA2B;
+              text-align:left;}
+         h1{color:black;}
+         table{  border:12px solid  #175017;}
+         hr{border: 3px solid  #175017;}
+         div{font-size: 20px;}
+         
+     </style>-->
+
+     <h1>register here for our courses:</h1>
+     <hr><br>
+     <h3>enter your name please:</h3>
+     <div>
+       First Name: <input type="text" id="txt1" class="txt"  onmouseover="colorChange()" onmouseout="colorWhite()"><br><br>
+       Last Name:  <input type="text" id="txt2" class="txt"  onmouseover="colorChange1()" onmouseout="colorWhite1()"><br><br>
+       <input type="button" id="b1" onclick="getName(this)"  value="submit">
+       <br><br><br><br><br>
+     </div>
+     
+     
+
+
+     <table  id="t1"  border="1"  align="center">
+         <tr>
+             <th  id="th1">  
+             FIRST NAME
+             </th>
+             <th>
+             LAST NAME
+             </th>
+             <th>
+             OPERATION
+             </th>
+         </tr>
+
+         
+     </table>
+     
+    <a href="attemptgym.html"   style="float:right; font-size: 30px;">click here to back</a>
+    </div>
+
+     
+     
+    </body>
+</html>

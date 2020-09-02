@@ -1,0 +1,41 @@
+body{text-align:left;
+    font-family: 'sofia';
+    background-color: #CCC6CB;
+    margin:30px;}
+
+h1{font-size:45px;
+  color: #E9CEE9;
+  font-weight:100;
+  padding-left:16px;
+  padding-top:2%;
+  margin:0px;
+  height:100px;
+  background-color: #2C2B2C;}
+
+
+a {text-decoration: none;
+  }
+
+  hr{border-top: 3px solid #4C0B60;}
+
+  footer{margin: 0%;
+    background-color:#AEF9ED;
+    height:150px;}
+
+    
+    #a3{float: left;
+        padding-left: 2%;
+        margin-left:0%;
+        }
+     
+        
+
+
+ #flip , #panel{
+            background-color: #F840E4;
+            font-size: 30px;
+            text-align: center;
+            border:1px solid #783871;
+            }
+        
+  #panel{display:none;}        
